@@ -7,25 +7,38 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     cssnano = require('gulp-cssnano'),
     autoprefixer = require('gulp-autoprefixer'),
+    sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    bs = require('browser-sync').create();
+    imagemin = require('gulp-imagemin');
 
+var bs = require('browser-sync').create();
+var exec = require('child_process').exec;
+
+
+gulp.task('server', function (cb) {
+  exec('node ./bin/www', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+});
 
 gulp.task('browser-sync', ['styles'], function() {
     bs.init({
-        server: {
-            baseDir: "./client"
+        proxy: {
+            target: "http://localhost:8080/",
         },
-        port: 8080
+        port: 8088
 
     });
 });
 
 gulp.task('styles', function () {
     return gulp.src('./client/public/styles/scss/**/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({errLogToConsole: true}))
     .pipe(autoprefixer('last 4 version'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./client/public/styles'))
     .pipe(bs.reload({stream: true}))
     .pipe(cssnano())
@@ -65,7 +78,7 @@ gulp.task('build', function () {
   runSequence('clean:dist',
     ['styles', 'scripts', 'images', 'fonts']
   )
-})
+});
 
 gulp.task('watch', ['browser-sync'], function () {
     gulp.watch("./client/public/styles/**/*.scss", ['styles']);
@@ -74,5 +87,5 @@ gulp.task('watch', ['browser-sync'], function () {
 });
 
 gulp.task('default', function () {
-  runSequence(['styles','browser-sync', 'watch'])
+  runSequence(['server', 'styles', 'browser-sync', 'watch'])
 })
