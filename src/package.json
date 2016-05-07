@@ -1,0 +1,21 @@
+{
+  "name": "NavExercise",
+  "description": "HUGE Nav App Excercise, as completed by Branden Dane",
+  "version": "0.1.1",
+  "authors": [
+    "Branden Dane <danetheory@gmail.com>"
+  ],
+  "license": "© 2016 Huge. All Rights Reserved.",
+  "homepage": "https://github.com/hugeinc/NavExercise",
+  "bugs": {
+    "url": "https://github.com/hugeinc/NavExercise/issues"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "express": "~4.2.0",
+    "morgan": "~1.0.0"
+  }
+}
