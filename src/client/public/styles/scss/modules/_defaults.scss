@@ -3,9 +3,13 @@
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
 html {
   font-size: 62.5%;
 }
+
 body {
+  background: $hugePink;
+  color: $hugeWhite;
   transition: all .4s .3s ease-in;
 }
