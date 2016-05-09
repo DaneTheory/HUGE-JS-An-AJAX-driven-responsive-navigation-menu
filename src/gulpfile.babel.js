@@ -9,7 +9,9 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin');
+    imagemin = require('gulp-imagemin'),
+    babel = require('gulp-babel');
+
 
 var bs = require('browser-sync').create();
 var exec = require('child_process').exec;
@@ -51,7 +53,6 @@ gulp.task('scripts', function(){
   gulp.src('./client/public/scripts/**/*.js')
     .pipe(gulp.dest('./client/public/scripts'))
     .pipe(bs.reload({stream: true, once: true}))
-    .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('../build/public/scripts'))
     .pipe(bs.reload({stream: true, once: true}));
@@ -86,6 +87,16 @@ gulp.task('watch', ['browser-sync'], function () {
     gulp.watch("./client/public/**/*.html").on('change', bs.reload);
 });
 
-gulp.task('default', function () {
+
+gulp.task('es6', () =>
+    gulp.src('client/public/scripts/**/*.js')
+        .pipe(babel({
+            plugins: ['transform-runtime'],
+            presets: ['es2015']
+        }))
+        .pipe(gulp.dest('../build/public/scripts'))
+);
+
+gulp.task('default', ['es6'], function () {
   runSequence(['server', 'styles', 'browser-sync', 'watch'])
 })
