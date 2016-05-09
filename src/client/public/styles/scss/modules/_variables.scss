@@ -3,3 +3,90 @@
 ===============================*/
 $hugePink: #EC008C;
 $hugeWhite: #FFFFFF;
+$hugeGrey: #EEEEEE;
+$hugeBlack--light: rgba(0, 0, 0, 0.5);
+
+
+/*==============================
+          BASE FONTS
+===============================*/
+$hg--mainFont: 'HUGEAvantGardeBold';
+$hg--subFont: 'Galaxie';
+$hg--baseFont: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+/*==============================
+          BASE FONT SIZES
+===============================*/
+$hg--primary--nav: 21px;
+$hg--secondary--nav: 16px;
+$hg--headline__desktop: 120px;
+$hg--body__desktop: 24px;
+$hg--headline__mobile: 44px;
+$hg--body__mobile: 14px;
+$hg--copyright: 12px;
+
+
+/*==============================
+    BASE TYPOGRAPHIC RYTHMN
+===============================*/
+$hg--mainNav--margin: 24px;
+$hg--subNav--margin: 12px;
+$hg--header--height: 640px;
+$hg--content--maxWidth: 968px;
+$hg--copyright--height: 48px;
+
+$hg--content--maxWidth__mobile: 767px;
+$hg--content--minWidth__mobile: 320px;
+$hg--padding__mobile: 24px;
+$hg--margin__mobile: 20px;
+$hg--mainNav--height__mobile: 20px;
+$hg--subNav--size__mobile: 48px;
+$hg--header--height__mobile: 240px;
+
+
+/*===================
+    STYLE RESULTS:
+====================*/
+
+// DESKTOP
+////////////
+
+// MainNav
+//   font-size: 21px
+//   font-family: HUGEAvantGardeBold
+//   line-height: 48px
+
+// SubNav
+//   font-size: 16px
+//   font-family: GalaxieCopernicusBook
+//   line-height: 48px
+
+// Headline__Desktop
+//   font-size: 120px
+//   font-family: HUGEAvantGardeBold
+//   line-height: 132px
+
+// Body__Desktop
+//   font-size: 24px
+//   font-family: GalaxieCopernicusBook
+//   line-height: 36px
+
+// Copyright
+//   font-size: 12px
+//   font-family: 'Helvetica Neue Regular'
+//   line-height: 16px
+
+
+// MOBILE
+////////////
+
+// Headline__Mobile
+//   font-size: 44px
+//   font-family: HUGEAvantGardeBold
+//   line-height: 48px
+
+// Body__Mobile
+//   font-size: 14px
+//   font-family: GalaxieCopernicusBook
+//   line-height: 24px
