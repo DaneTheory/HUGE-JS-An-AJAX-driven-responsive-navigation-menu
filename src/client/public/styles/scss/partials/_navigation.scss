@@ -1,0 +1,327 @@
+header {
+  background-color: $hugePink;
+  color: $hugeWhite;
+  padding: 0;
+  width: 100%;
+  float: left;
+  z-index: 50;
+  position: relative;
+  .header__component--logo {
+    float: left;
+    padding: 24px 0 24px 24px;
+    margin: 0 48px 0 0;
+    img {
+      width: 60px;
+      float: left;
+    }
+  }
+  .btn__menu--toggle {
+    display: none;
+  }
+  nav {
+    float: left;
+    .header__copyright {
+      display: none;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    .nav__main--li {
+      float: left;
+      position: relative;
+      &.isActive {
+        background-color: $hugeWhite;
+        .nav__primaryLink {
+          color: $hugePink;
+        }
+      }
+      a {
+        padding: 24px;
+        float: left;
+        font-family: $hg--mainFont;
+        font-size: 21px;
+        color: $hugeWhite;
+        line-height: 24px;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: $hugeWhite;
+        transition: all .3s ease;
+        .nav__primaryLink {
+          color: $hugePink;
+          transition: all .3s ease;
+        }
+      }
+    }
+    .nav__sub--ul {
+      position: absolute;
+      left: 0;
+      top: 72px;
+      display: none;
+      width: auto;
+      padding: 12px 0;
+      background-color: $hugeWhite;
+      z-index: 20;
+      opacity: 0;
+
+      @media screen and (min-width: 320px) {
+          animation: mobile__subNav--anim .3s ease;
+          animation-fill-mode: both;
+      }
+
+      @media screen and (min-width: 768px) {
+          animation: desktop__subNav--anim .27s ease;
+          animation-fill-mode: both;
+      }
+      &.ui--showComponent {
+        display: block;
+      }
+      li {
+        display: flex;
+      }
+      a {
+        font-family: $hg--subFont;
+        font-size: 16px;
+        color: $hugeBlack;
+        white-space: nowrap;
+        padding: 16px 24px;
+        width: 100%;
+        transition: all .3s ease;
+        &:hover {
+          background-color: $hugeGrey;
+          color: $hugePink;
+          transition: all .3s ease;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 990px) {
+  header nav .nav__main--li a {
+    padding: 24px 18px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    .header__component--logo {
+      float: left;
+      padding: 24px 0px 24px 24px;
+      margin: 0 40px 0 0;
+      width: 60px;
+      img {
+        width: 100%;
+        float: left;
+      }
+    }
+    nav {
+      display: inline-block;
+      float: left;
+      position: relative;
+      ul {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        float: left;
+      }
+      .nav__main--li{
+        float: left;
+        position: relative;
+        margin: auto auto;
+       a {
+        padding: 15px 15px;
+        font-size: 18px;
+        line-height: 42px;
+      }
+    }
+      .nav__sub--ul {
+        top: 72px;
+        a {
+          font-size: 14px;
+          color: $hugeBlack;
+          white-space: nowrap;
+          padding: 6px 24px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  header {
+    height: 60px;
+    .header__nav--components {
+      z-index: 200;
+      float: left;
+      width: 100%;
+      height: 60px;
+      position: relative;
+      background-color: $hugePink;
+    }
+    &.activate--mobile {
+      nav, .header__component--logo {
+        left: 0;
+        overflow: auto;
+      }
+      .btn__menu--toggle {
+        left: 100%;
+        transform: translate(-72px, 0px);
+      }
+      .nav__main--li {
+        &.isActive {
+          background: $hugeGrey;
+          color: $hugePink;
+          transition: all .3s ease;
+        }
+      }
+      .nav__sub--ul {
+        position: relative;
+        left: 0;
+        top: 0px;
+        display: none;
+        width: auto;
+        padding: 12px 0;
+        background-color: $hugeGrey;
+        z-index: 20;
+      }
+    }
+    .header__component--logo {
+      position: absolute;
+      left: -80px;
+      padding: 20px 0 20px 24px;
+      transition: 0.5s;
+      img {
+        width: 50px;
+      }
+    }
+    .btn__menu--toggle {
+      background-image: url('../images/toggle-open.svg');
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      left: 0px;
+      display: block;
+      width: 72px;
+      height: 60px;
+      transition: 1s;
+      -webkit-appearance: none;
+      background-color: $hugePink;
+      border: none;
+      outline: none;
+      &.close {
+        background-image: url('../images/toggle-close.svg');
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    nav {
+      position: absolute;
+      top: 60px;
+      left: -280px;
+      background-color: $hugeWhite;
+      z-index: 100;
+      height: 100vh;
+      transition: 0.5s;
+      -webkit-transform: translate(0, -60px);
+      -moz-transform: translate(0, -60px);
+      transform: translate(0, -60px);
+      .header__copyright {
+        display: block;
+      }
+      span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 10px 0px;
+        font-family: $hg--baseFont;
+        text-align: center;
+        font-size: 12px;
+        color: $hugeBlack;
+        background: $hugeWhite;
+        z-index: 50;
+      }
+      ul {
+        padding: 72px 0;
+        float: left;
+        width: 280px;
+          .nav__main--li {
+            float: left;
+            position: relative;
+            &:not(:only-child) {
+              &.nav--hasChildren {
+                &.isActive:after {
+                  transform: rotate(-135deg);
+                  top: 25px;
+                }
+                &:after {
+                  content: '';
+                  display: block;
+                  position: absolute;
+                  top: 25px;
+                  right: 15px;
+                  width: 10px;
+                  height: 10px;
+                  border-bottom: 3px solid $hugePink;
+                  border-right: 3px solid $hugePink;
+                  transform: rotate(45deg);
+                  transition: 0.35s;
+                }
+              }
+            }
+            &:hover {
+              color: $hugeBlack;
+            }
+            a {
+              padding: 15px 24px;
+            }
+            .nav__primaryLink {
+              color: $hugeBlack;
+              width: 232px;
+              padding: 24px;
+              transition: all .3s ease;
+              &:hover {
+                background-color: $hugeGrey;
+                color: $hugePink !important;
+                transition: all .3s ease;
+              }
+            }
+            ul {
+            .nav__sub--ul {
+              position: relative;
+              display: none;
+              top: 0;
+              padding: 0;
+              &.ui--showComponent {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 968px) {
+  header {
+    .header__component--logo {
+      float: left;
+      padding: 24px 0px 24px 24px;
+      margin: 0 48px 0 0;
+      width: 60px;
+    }
+    nav {
+      .nav__main--li {
+        a {
+          padding: 12px 24px;
+          font-size: 21px;
+          line-height: 48px;
+        }
+      }
+    }
+  }
+}

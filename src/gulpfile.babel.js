@@ -36,7 +36,7 @@ gulp.task('browser-sync', ['styles'], function() {
 });
 
 gulp.task('styles', function () {
-    return gulp.src('./client/public/styles/scss/**/*.scss')
+    return gulp.src('./client/public/styles/scss/**/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({errLogToConsole: true}))
     .pipe(autoprefixer('last 4 version'))

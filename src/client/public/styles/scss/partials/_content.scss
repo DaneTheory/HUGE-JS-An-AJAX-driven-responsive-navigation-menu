@@ -1,0 +1,141 @@
+/*==================================
+      CONTENT AREA STYLES
+===================================*/
+.main__container {
+  float: left;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  section {
+    position: relative;
+    .hero__image--component {
+      width: 100%;
+      min-height: 640px;
+      background: url('../images/background-image.jpg') center;
+      background-size: cover;
+    }
+  }
+  .section__info {
+    padding: 0 24px;
+    margin-top: 60px;
+    p {
+      margin: 0 auto;
+      max-width: 968px;
+      font-family: $hg--subFont;
+      font-size: 24px;
+      color: $hugeBlack;
+      line-height: 36px;
+    }
+  }
+}
+
+@media screen and (min-width: 868px) {
+  .main__container {
+    .section__info {
+      margin-top: 45px;
+      p {
+        font-size: 24px;
+        line-height: 36px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main__container {
+    section {
+      .hero__image--component {
+        min-height: 480px;
+      }
+      .hero__headline--component {
+
+        h2 {
+          padding: 0px 24px;
+          font-family: $hg--mainFont;
+          font-size: 85px;
+          color: $hugeWhite;
+          line-height: 102px;
+          text-align: center;
+          width: 75%;
+          height: 43%;
+          margin: auto;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          white-space: nowrap;
+        }
+      }
+    }
+    .section__info {
+      margin-top: 45px;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .main__container {
+    .section__info {
+      margin-top: 0;
+      p {
+        font-size: 14px;
+        line-height: 24px;
+
+        @media screen and (min-width: 650px) {
+          font-size: 20px;
+          line-height: 36px;
+        }
+      }
+    }
+    .hero__image--component {
+      min-height: 240px;
+      background: url("/public/images/background-image.jpg") center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: inherit;
+    }
+    .hero__headline--component {
+      position: relative;
+      transform: none;
+      h2 {
+        font-size: 44px;
+        line-height: 50px;
+        padding: 0px 24px;
+        margin: 50px auto;
+        color: $hugeBlack;
+      }
+    }
+    .section__hero .hero__image--component {
+      min-height: 240px;
+      overflow: hidden;
+      background: url('/public/images/background-image.jpg') center;
+      background-size: cover;
+    }
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .main__container {
+    .section__info {
+      padding: 0 24px;
+      margin: auto;
+      margin-top: 60px;
+    }
+    section {
+      .hero__image--component {
+        min-height: 640px;
+      }
+      .hero__headline--component {
+        h2 {
+          padding: 0px 24px;
+          font-size: 120px;
+          line-height: 132px;
+          text-align: center;
+          width: 90%;
+          height: 45%;
+        }
+      }
+    }
+  }
+}

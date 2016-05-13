@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="An awesome code challenge for an awesome company">
@@ -9,14 +10,50 @@
 
     <link rel="stylesheet" href="/public/styles/styles.css">
 
-  </head>
-  <body>
-    <header class="header" role="banner">
-      <nav id="hg--nav" role="navigation"></nav>
-    </header>
+</head>
 
-    <main class="main" role="main"></main>
+<body>
+
+  <header id="header__nav--wrapper">
+  	<div class="header__nav--components">
+  		<div class="header__component--logo">
+  			<img src="/public/images/HUGE-white.png" alt="HUGE Logo" />
+  		</div>
+      <div class="nav__mobile">
+  	     <button class="btn__menu--toggle" id="btn__menu"></button>
+      </div>
+  	</div>
+
+  	<nav id="nav__menu">
+  		<span class="header__copyright">&#169 2014 Huge. All Rights Reserved.</span>
+  	</nav>
+  </header>
+
+  <main class="main__container">
+    <section class="section__hero">
+  	  <div class="hero__image--component"></div>
+  		<div class="hero__headline--component">
+        <h2>
+          Get paid for
+          <br />
+          giving a shit.
+        </h2>
+  		</div>
+  	</section>
+
+  	<section class="section__info">
+      <p>
+        Bitters tacos bicycle rights asymmetrical, banjo hoodie heirloom tote bag intelligentsia polaroid wolf artisan. Put a bird on it venmo microdosing heirloom, synth readymade aesthetic cray meggings gentrify stumptown. Viral pork belly aesthetic, tacos artisan meh cliche listicle direct trade distillery brunch polaroid migas vegan. Church-key vice bitters narwhal, flannel tattooed small batch ugh cronut locavore banh mi asymmetrical butcher kickstarter. Health goth semiotics street art actually. Artisan occupy organic DIY, gastropub cray deep v pickled tacos VHS beard.
+        <br />
+        Meditation fap church-key semiotics swag try-hard. Mumblecore leggings butcher, bushwick yr fashion axe XOXO yuccie church-key typewriter ramps selfies next level. Bushwick tattooed YOLO, single-origin coffee kickstarter hoodie biodiesel crucifix synth flannel ennui. Craft beer synth cornhole stumptown. Raw denim fixie slow-carb, chillwave meditation pop-up authentic.
+      </p>
+    </section>
+  </main>
+
+  <div id="page--mask"></div>
+
 
     <script src="/public/scripts/hugeNavigation.js"></script>
-  </body>
+</body>
+
 </html>
