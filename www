@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+var app = require('../server/server');
+var port = process.env.PORT || 8080;
+
+app.set('port', port);
+
+var modeChecker = (port === 8080) ? devMode() : prodMode();
+
+function devMode() {
+  return 'Running in Development Mode'
+}
+
+function prodMode() {
+  return 'Running in Production Mode'
+}
+
+app.listen(port)
+console.log('HUGE App available at http://localhost:' + port + ' ' +
+  modeChecker);
