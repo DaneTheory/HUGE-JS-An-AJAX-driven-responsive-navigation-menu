@@ -1,10 +1,9 @@
 {
   "name": "NavExercise",
-  "description": "Exercise for candidates to complete where they will build a responsive nav driven from json",
+  "description": "HUGE Nav App Excercise, as completed by Branden Dane",
   "version": "0.1.1",
   "authors": [
-    "Wes Hatch <whatch@hugeinc.com>",
-    "Karl Stanton <kstanton@hugeinc.com>"
+    "Branden Dane <danetheory@gmail.com>"
   ],
   "license": "© 2016 Huge. All Rights Reserved.",
   "homepage": "https://github.com/hugeinc/NavExercise",
@@ -13,10 +12,30 @@
   },
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www"
   },
   "dependencies": {
     "express": "~4.2.0",
+    "json-server": "^0.8.10",
     "morgan": "~1.0.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-plugin-transform-runtime": "^6.8.0",
+    "babel-preset-es2015": "^6.6.0",
+    "browser-sync": "^2.12.5",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-cache": "^0.4.4",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
+    "run-sequence": "^1.1.5"
   }
+}

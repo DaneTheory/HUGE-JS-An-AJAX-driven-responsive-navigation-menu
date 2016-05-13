@@ -5,8 +5,8 @@ var app = express();
 var router = express.Router();
 var jsonServer = require('json-server');
 var server = jsonServer.create();
-var apiRouter = jsonServer.router('../data/nav.json');
 var middlewares = jsonServer.defaults();
+var apiRouter = jsonServer.router('nav.json');
 var port = process.env.PORT || 3001;
 
 
