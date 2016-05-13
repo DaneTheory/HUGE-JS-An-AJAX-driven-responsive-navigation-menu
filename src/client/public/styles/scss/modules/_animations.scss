@@ -1,0 +1,42 @@
+/*==================================
+     ANIMATION KEYFRAME BUILDS
+===================================*/
+@keyframes desktop__subNav--anim {
+  0% {
+    display: none;
+    opacity: 0;
+    z-index:0;
+    transform: translate(0%, -150%);
+  }
+  1% {
+    display: block;
+    opacity: 0;
+    z-index:0;
+    transform: translate(0%, -150%);
+  }
+  100% {
+    opacity: 1;
+    z-index:20;
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes mobile__subNav--anim {
+  0% {
+    display: none;
+    opacity: 0;
+    z-index:0;
+    transform: translate(0%, -25%);
+  }
+  1% {
+    display: block;
+    opacity: 0;
+    z-index:0;
+    transform: translate(0%, -25%);
+  }
+  100% {
+    opacity: 1;
+    z-index:20;
+    transform: translate(0%, 0%);
+  }
+}

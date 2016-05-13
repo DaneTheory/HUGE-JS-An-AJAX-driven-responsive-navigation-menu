@@ -1,15 +1,28 @@
-* {
-  box-sizing: border-box;
+*, *:before, *:after {
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-
 html {
+  box-sizing: border-box;
   font-size: 62.5%;
+  list-style: none;
 }
 
+html ul,
+html * ul,
+html li,
+html * li { list-style: none }
+
+html a,
+html * a { text-decoration: none }
+
 body {
-  background: $hugePink;
-  color: $hugeWhite;
-  transition: all .4s .3s ease-in;
+    background: $hugeWhite;
+    color: $hugeBlack;
+    padding: 0;
+    margin: 0;
+}
+
+body.scrollLock {
+    overflow: hidden;
 }
